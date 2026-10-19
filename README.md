@@ -2,6 +2,11 @@
 
 Separate touchpad settings for an external touchpad and your laptop's built-in one on Windows 10/11.
 
+> **Windows only.** Touchpad Control uses Windows' Precision Touchpad settings and Task Scheduler, so it
+> doesn't work on macOS or Linux.
+
+**[Download the latest release](https://github.com/badbatchx85/touchpad-control/releases/latest)**
+
 Windows keeps **one** set of Precision Touchpad settings for every touchpad. Plug in an external pad
 (Apple Magic Trackpad, ProtoArc T1, Logitech T650, ...) and it shares tap sensitivity, cursor speed and
 tap-and-drag with your laptop's pad, even though the two often need different settings.
@@ -27,15 +32,17 @@ Anything you change in **Settings > Bluetooth & devices > Touchpad** is saved in
 
 ## Requirements
 
-- Windows 10 or 11 with a Precision Touchpad (most laptops since ~2017)
+- Windows 10 or 11 (not macOS or Linux) with a Precision Touchpad (most laptops since ~2017)
 - An external touchpad that Windows treats as a Precision Touchpad
 - Windows PowerShell 5.1 (built in). No admin rights or extra installs needed.
 
 ## Install
 
-1. Download or clone this repository to a folder you'll keep, for example `%USERPROFILE%\Tools\touchpad-control`.
+1. Download `touchpad-control-<version>.zip` from the
+   [latest release](https://github.com/badbatchx85/touchpad-control/releases/latest) and extract it to a folder
+   you'll keep, for example `%USERPROFILE%\Tools\touchpad-control`. (Cloning the repository works too.)
    The logon task runs the script from that folder, so don't move it afterwards (or run `install` again if you do).
-2. In PowerShell, run:
+2. Open PowerShell in that folder and run:
 
    ```powershell
    powershell -ExecutionPolicy Bypass -File .\TouchpadControl.ps1 install
